@@ -58,12 +58,13 @@ export class TokenInterceptor implements HttpInterceptor {
         take(1),
         switchMap((res) => {
           return next.handle(this.addToken(req,
-            this.authService.getJwtToken()))
+            this.authService.getJwtToken()));
         })
       );
     }
   }
 
+  // tslint:disable-next-line:typedef
   addToken(req: HttpRequest<any>, jwtToken: any) {
     return req.clone({
       headers: req.headers.set('Authorization',

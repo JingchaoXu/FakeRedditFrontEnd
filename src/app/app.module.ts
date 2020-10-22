@@ -21,6 +21,10 @@ import { SubredditSideBarComponent } from './shared/subreddit-side-bar/subreddit
 import { CreateSubredditComponent } from './subreddit/create-subreddit/create-subreddit.component';
 import { CreatePostComponent } from './post/create-post/create-post.component';
 import { ListSubredditsComponent } from './subreddit/list-subreddits/list-subreddits.component';
+import {EditorModule} from '@tinymce/tinymce-angular';
+import { ViewPostComponent } from './post/view-post/view-post.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { UserProfileComponent } from './auth/user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +39,9 @@ import { ListSubredditsComponent } from './subreddit/list-subreddits/list-subred
     SubredditSideBarComponent,
     CreateSubredditComponent,
     CreatePostComponent,
-    ListSubredditsComponent
+    ListSubredditsComponent,
+    ViewPostComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +51,9 @@ import { ListSubredditsComponent } from './subreddit/list-subreddits/list-subred
     NgxWebstorageModule.forRoot(),
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    FontAwesomeModule
+    FontAwesomeModule,
+    EditorModule,
+    NgbModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
